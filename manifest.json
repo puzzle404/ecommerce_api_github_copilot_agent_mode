@@ -1,0 +1,38 @@
+{
+  "name": "EcommerceProductosAPI",
+  "description": "Herramientas para consultar y explorar productos en un ecommerce",
+  "tools": [
+    {
+      "name": "listar_productos",
+      "description": "Devuelve todos los productos disponibles con nombre, precio y stock",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "productos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "integer" },
+                "name": { "type": "string" },
+                "price": { "type": "number" },
+                "stock": { "type": "integer" }
+              }
+            }
+          }
+        }
+      },
+      "endpoint": {
+        "url": "http://localhost:3000/api/v1/products",
+        "method": "GET",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNzUwMTI2MDQ0LCJleHAiOjE3NTAyOTg4NDQsImp0aSI6ImRhNGIwY2NjLTM3NTktNGYzYi1iNTRiLTkxM2QxZTZjZTgyNiJ9.C8v3Snp21rihsRQzhTg3f98VzKom-zl-8Ys0zbbhtHE"
+        }
+      }
+    }
+  ]
+}
