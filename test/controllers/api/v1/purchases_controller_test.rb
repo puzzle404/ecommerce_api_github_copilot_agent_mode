@@ -20,7 +20,7 @@ class Api::V1::PurchasesControllerTest < ActionDispatch::IntegrationTest
         purchase: {
           product_id: products(:one).id,
           customer_id: users(:customer_user).id,
-          purchase_date: Date.today,
+          purchase_date: Date.current,
           quantity: 1,
           total_price: 50
         }
@@ -34,5 +34,26 @@ class Api::V1::PurchasesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     body = JSON.parse(@response.body)
     assert body.values.first.to_i >= 1
+  end
+
+    test "should get purchases count by hour" do
+    get count_api_v1_purchases_url(granularity: "hour")
+    assert_response :success
+    body = JSON.parse(@response.body)
+    assert body.is_a?(Hash)
+  end
+
+  test "should get purchases count by day" do
+    get count_api_v1_purchases_url(granularity: "day")
+    assert_response :success
+    body = JSON.parse(@response.body)
+    assert body.is_a?(Hash)
+  end
+
+  test "should get purchases count by week" do
+    get count_api_v1_purchases_url(granularity: "week")
+    assert_response :success
+    body = JSON.parse(@response.body)
+    assert body.is_a?(Hash)
   end
 end
