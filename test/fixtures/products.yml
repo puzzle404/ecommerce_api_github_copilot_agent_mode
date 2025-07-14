@@ -1,0 +1,7 @@
+one:
+  name: Laptop
+  price: 1000.0
+  stock: 5
+  description: Basic laptop
+  administrator: admin_user
+  category: one

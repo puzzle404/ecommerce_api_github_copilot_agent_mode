@@ -1,0 +1,6 @@
+one:
+  product: one
+  customer: customer_user
+  purchase_date: 2024-01-01
+  quantity: 2
+  total_price: 2000.0
