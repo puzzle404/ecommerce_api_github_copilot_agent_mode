@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post 'auth/login', to: 'auth#login'
       get 'token_info', to: 'tokens#show'
+      post 'ai/summary', to: 'ai#summary'
       get 'products/top_revenue', to: 'products#top_revenue'
       resources :products
       resources :categories, only: [:index, :create, :update]
