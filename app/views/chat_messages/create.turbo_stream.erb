@@ -3,7 +3,7 @@
 <% end %>
 <%= turbo_stream.replace 'new_message' do %>
   <%= turbo_frame_tag 'new_message' do %>
-    <%= simple_form_for ChatMessage.new, url: chat_index_path do |f| %>
+    <%= simple_form_for ChatMessage.new, url: chat_messages_path do |f| %>
       <%= f.input :message, as: :text %>
       <%= f.button :submit, 'Send' %>
     <% end %>

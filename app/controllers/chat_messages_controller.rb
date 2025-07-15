@@ -1,4 +1,4 @@
-class ChatController < ApplicationController
+class ChatMessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
@@ -13,7 +13,7 @@ class ChatController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream
-      format.html { redirect_to chat_path }
+      format.html { redirect_to chat_messages_path }
     end
   end
 

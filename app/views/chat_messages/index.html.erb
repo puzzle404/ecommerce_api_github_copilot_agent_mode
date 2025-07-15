@@ -3,7 +3,7 @@
   <%= render @chat_messages %>
 </div>
 <%= turbo_frame_tag 'new_message' do %>
-  <%= simple_form_for @chat_message, url: chat_index_path, method: :post, data: { turbo_frame: 'messages' } do |f| %>
+  <%= simple_form_for @chat_message, url: chat_messages_path, method: :post, data: { turbo_frame: 'messages' } do |f| %>
     <%= f.input :message, as: :text %>
     <%= f.button :submit, 'Send' %>
   <% end %>

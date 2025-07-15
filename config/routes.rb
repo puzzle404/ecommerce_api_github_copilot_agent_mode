@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'products#index'
   resources :products, only: %i[index show]
   resources :purchases, only: :create
-  resources :chat, only: %i[index create]
+  resources :chat_messages, only: %i[index create]
   namespace :api do
     namespace :v1 do
       post 'auth/login', to: 'auth#login'
