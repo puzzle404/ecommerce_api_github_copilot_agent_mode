@@ -1,0 +1,9 @@
+<h1>Products</h1>
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <%= link_to product.name, product_path(product) %> - $<%= product.price %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Chat Support', chat_index_path %>
