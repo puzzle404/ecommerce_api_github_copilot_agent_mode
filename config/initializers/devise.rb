@@ -323,5 +323,6 @@ Devise.setup do |config|
 
   config.warden do |manager|
     manager.failure_app = Api::V1::CustomFailureApp
+    # manager.failure_app = Devise::FailureApp
   end
 end
