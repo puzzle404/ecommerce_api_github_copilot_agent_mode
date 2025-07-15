@@ -1,6 +1,6 @@
 class AiClient
   def initialize
-    @client = OpenAI::Client.new(access_token: Rails.application.credentials.dig(:openai, :api_key))
+    @client = OpenAI::Client.new(access_token:)
   end
 
   def purchases_summary(user)
@@ -16,5 +16,9 @@ class AiClient
     })
 
     response.dig('choices', 0, 'message', 'content')
+  end
+
+  def access_token
+    Rails.application.credentials.dig(:openai, :api_key)
   end
 end
