@@ -21,4 +21,19 @@ class AiClient
   def access_token
     Rails.application.credentials.dig(:openai, :api_key)
   end
+
+  def chat_response(message, user = nil)
+    prompt = message.to_s
+    if user
+      info = "Usuario: email #{user.email}"
+      info += ", direccion #{user.address}" if user.address.present?
+      prompt = "#{prompt}\n\nInformacion del usuario: #{info}"
+    end
+
+    response = @client.chat(parameters: {
+      model: 'gpt-3.5-turbo',
+      messages: [{ role: 'user', content: prompt }]
+    })
+    response.dig('choices', 0, 'message', 'content')
+  end
 end

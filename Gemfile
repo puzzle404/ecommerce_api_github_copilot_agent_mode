@@ -44,3 +44,6 @@ end
 gem 'devise'
 gem 'devise-jwt'
 gem "ruby-openai"
+gem 'simple_form'
+gem 'turbo-rails'
+gem 'importmap-rails'

@@ -1,0 +1,6 @@
+<div class="message">
+  <p><strong>You:</strong> <%= chat_message.message %></p>
+  <% if chat_message.answer.present? %>
+    <p><strong>AI:</strong> <%= chat_message.answer %></p>
+  <% end %>
+</div>
